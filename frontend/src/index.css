@@ -380,3 +380,118 @@ i {
     justify-content: center;
     width: 100%;
 }
+
+
+.logo {
+    height: 70vmin;
+    padding-top: 45px;
+    pointer-events: none;
+}
+
+  /* @media (prefers-reduced-motion: no-preference) {
+    .logo {
+      animation: logo-spin infinite 20s linear;
+    }
+  } */
+
+  .header {
+    background-color:rgb(13, 17, 22);
+    min-height: 50px;
+    max-height: 130px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+    border-bottom: 10px thick rgb(13, 17, 22);
+    padding: 64px;
+  }
+  
+  /* @keyframes logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  } */
+  .body {
+    background-color: rgb(13, 17, 22);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    gap: 20px;
+  
+  }
+  
+  
+  h1 {
+    font-size: 128px !important;
+    margin: 0;
+  }
+  
+  h2 {
+    font-size: 48px;
+  }
+  
+  .body_buttons {
+    /* display: flex;   */
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 10px;
+    height: fit-content;
+    width: fit-content;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .body_buttons:hover {
+    background: rgba(255, 255, 255, 0.1);
+  
+  }
+  
+  .body_buttons:active {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  input::placeholder {
+    color: #999;
+  }
+  
+  input:focus::placeholder {
+    color: transparent;
+  }
+
+.input-div {
+    margin-bottom: 16px;
+    width: 344px;
+}
+
+.account-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+form{
+    align-items: center;
+}

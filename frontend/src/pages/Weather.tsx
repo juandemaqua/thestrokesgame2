@@ -1,25 +1,36 @@
 import { useEffect, useState } from "react";
-import { WeatherResponse } from "@full-stack/types";
-import { coinflip } from "@full-stack/common";
+// import { WeatherResponse } from "@full-stack/types";
+// import { coinflip } from "@full-stack/common";
+// import { Input, CloseButton } from '@mantine/core';
+import { Autocomplete } from '@mantine/core';
 import { BACKEND_BASE_PATH } from "../constants/Navigation";
 
-const getWeather = (): Promise<WeatherResponse> =>
-    fetch(`${BACKEND_BASE_PATH}/weather`).then((res) => res.json());
+const getShit = (): Promise<any> =>
+    fetch(`${BACKEND_BASE_PATH}/get-usernames`).then(async(res) => {
+        const jsonRes = await res.json();
+        console.log("Retrieved", jsonRes);
+        return jsonRes;
+    }).catch((err) => {
+        console.log("Errored out", err);
+    });
 
 const Weather = () => {
-    const [{ raining }, setRaining] = useState<WeatherResponse>({
-        raining: coinflip(),
-    });
+    const [res, setRes] = useState([]);
 
     useEffect(() => {
         console.log("Loading weather...");
-        getWeather().then((data) => setRaining(data));
+        getShit().then((data) => setRes(data));
     }, []);
 
     return (
         <div>
-            <h1>Is it raining in New York?</h1>
-            <p>{raining ? "Yes" : "No"}</p>
+        <Autocomplete
+            label="Your favorite library"
+            placeholder="Pick value or enter anything"
+            data={['Is This It', 'The Modern Age', 'Soma']}
+        />
+            <h1>Usernames:</h1>
+            <p>{JSON.stringify(res)}</p>
         </div>
     );
 };
